@@ -1,0 +1,18 @@
+# Build/package artifacts
+*.zip
+*.7z
+*.tar.gz
+
+# Windows noise
+Thumbs.db
+Desktop.ini
+
+# Editor/OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs/temp
+*.log
+*.tmp
