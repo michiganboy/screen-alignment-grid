@@ -4,6 +4,12 @@ A small Windows overlay utility for aligning games, apps, and desktop layouts UI
 
 It draws a transparent, click-through, always-on-top grid over one selected monitor by default, with strong vertical and horizontal center lines. You can also toggle all-monitor mode.
 
+## Screenshot
+
+![Screen Alignment Grid running over EverQuest Legends with the settings window open](assets/screen-alignment-grid-everquest-example.jpg)
+
+Example view with the overlay enabled, center axes and numbered grid lines visible, and the settings window open over a game running in windowed/borderless mode.
+
 ## Files
 
 - `ScreenAlignmentGrid.ps1` — the actual tool.
