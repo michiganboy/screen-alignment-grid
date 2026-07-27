@@ -190,7 +190,7 @@ namespace ScreenAlignmentGrid
                         Invalidate();
                         return;
                     case HOTKEY_GRID_LARGER:
-                        gridSize = Math.Min(200, gridSize + 10);
+                        gridSize = Math.Min(240, gridSize + 10);
                         Invalidate();
                         return;
                     case HOTKEY_OPACITY_DOWN:
@@ -376,7 +376,7 @@ namespace ScreenAlignmentGrid
 
             NoWheelTrackBar gridTrack = new NoWheelTrackBar();
             gridTrack.Minimum = 10;
-            gridTrack.Maximum = 200;
+            gridTrack.Maximum = 240;
             gridTrack.TickFrequency = 10;
             gridTrack.SmallChange = 10;
             gridTrack.LargeChange = 25;
@@ -385,23 +385,47 @@ namespace ScreenAlignmentGrid
             gridTrack.Width = 640;
             gridTab.Controls.Add(gridTrack);
 
+            Label gridMarkerHelp = new Label();
+            gridMarkerHelp.Text = "16:9 helper marks:";
+            gridMarkerHelp.AutoSize = true;
+            gridMarkerHelp.Location = new Point(24, 112);
+            gridTab.Controls.Add(gridMarkerHelp);
+
+            Label gridMarker60 = new Label();
+            gridMarker60.Text = "60";
+            gridMarker60.AutoSize = true;
+            gridMarker60.Location = new Point(158, 112);
+            gridTab.Controls.Add(gridMarker60);
+
+            Label gridMarker120 = new Label();
+            gridMarker120.Text = "120";
+            gridMarker120.AutoSize = true;
+            gridMarker120.Location = new Point(326, 112);
+            gridTab.Controls.Add(gridMarker120);
+
+            Label gridMarker240 = new Label();
+            gridMarker240.Text = "240 px";
+            gridMarker240.AutoSize = true;
+            gridMarker240.Location = new Point(620, 112);
+            gridTab.Controls.Add(gridMarker240);
+
             Label gridHelp = new Label();
             gridHelp.Text = "Default spacing is 50 px. Grid lines are center-anchored, so they measure pixel offsets outward from the red center lines for /Viewport positioning.";
             gridHelp.AutoSize = false;
-            gridHelp.Location = new Point(24, 116);
+            gridHelp.Location = new Point(24, 142);
             gridHelp.Size = new Size(650, 50);
             gridTab.Controls.Add(gridHelp);
 
             Label opacityLabel = new Label();
             opacityLabel.Text = "Grid intensity";
             opacityLabel.AutoSize = true;
-            opacityLabel.Location = new Point(24, 184);
+            opacityLabel.Location = new Point(24, 214);
             gridTab.Controls.Add(opacityLabel);
 
             Label opacityValue = new Label();
             opacityValue.Text = alpha.ToString();
             opacityValue.AutoSize = true;
-            opacityValue.Location = new Point(610, 184);
+            opacityValue.Location = new Point(610, 214);
             gridTab.Controls.Add(opacityValue);
 
             NoWheelTrackBar opacityTrack = new NoWheelTrackBar();
@@ -411,14 +435,14 @@ namespace ScreenAlignmentGrid
             opacityTrack.SmallChange = 15;
             opacityTrack.LargeChange = 30;
             opacityTrack.Value = Math.Max(opacityTrack.Minimum, Math.Min(opacityTrack.Maximum, alpha));
-            opacityTrack.Location = new Point(24, 216);
+            opacityTrack.Location = new Point(24, 246);
             opacityTrack.Width = 640;
             gridTab.Controls.Add(opacityTrack);
 
             Label opacityHelp = new Label();
             opacityHelp.Text = "Intensity dims line colors without alpha-blending them into the transparent background.";
             opacityHelp.AutoSize = false;
-            opacityHelp.Location = new Point(24, 318);
+            opacityHelp.Location = new Point(24, 348);
             opacityHelp.Size = new Size(650, 42);
             gridTab.Controls.Add(opacityHelp);
 

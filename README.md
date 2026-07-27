@@ -65,7 +65,7 @@ It lets you change:
 - +/- axis line-number labels. These show grid-line counts from center, such as `-2`, `-1`, `0`, `+1`, `+2`, directly on the center axes.
 - Single-display target.
 - All-displays mode.
-- Grid spacing.
+- Grid spacing, now adjustable up to `240 px` with `60`, `120`, and `240 px` 16:9 helper marks.
 - Grid intensity.
 - Locked colorblind-friendly color presets.
 - Custom-only color buttons for thin grid lines, major grid lines, center lines, and line-number text.
@@ -94,6 +94,7 @@ MIT License. See [`LICENSE`](LICENSE).
 
 ### Version notes
 
+- `2026-07-27 v29`: Raised the grid-spacing maximum to `240 px` and added Grid-tab 16:9 helper marks for `60`, `120`, and `240 px` spacing.
 - `2026-07-27 v28`: Added Grid-tab guidance that the default grid interval is 50 px and that grid lines are center-anchored for measuring `/Viewport` pixel offsets from the red center lines.
 - `2026-07-08 v27`: Shortened the General tab uninstall description to `Remove installed app files` to avoid clipping on high-DPI displays.
 - `2026-07-08 v26`: Fixed high-DPI clipping on the General tab uninstall description by shortening the text and increasing the label height.
