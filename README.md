@@ -17,18 +17,40 @@ Example view with the overlay enabled, center axes and numbered grid lines visib
 - `Launch Screen Alignment Grid.vbs` — invisible launcher used by installed shortcuts so no console/taskbar command window appears.
 - `Install Screen Alignment Grid.cmd` — installs the tool for the current Windows user and creates Desktop and Start Menu launch shortcuts.
 - `Create Desktop Shortcut.cmd` — creates a **Screen Alignment Grid** shortcut on your Windows desktop.
+- `scripts/build-release.sh` — builds separate Portable and Installer release ZIPs plus `SHA256SUMS.txt`.
 - `assets/ScreenAlignmentGrid.ico` — custom app icon.
+
+## Release downloads
+
+Use the **Portable** ZIP as the default download when you want the easiest-to-inspect package with the fewest antivirus heuristic triggers.
+
+- `ScreenAlignmentGrid-<version>-Portable.zip` — recommended. Includes only the tool, portable launcher, README, license, and assets. It excludes installer scripts, the hidden VBS launcher, shortcut creation, and uninstall helpers.
+- `ScreenAlignmentGrid-<version>-Installer.zip` — optional. Includes the current-user installer and hidden launcher used to create polished Desktop/Start Menu shortcuts. Some antivirus tools may flag this package because it uses PowerShell, `wscript.exe`, and shortcut/install helper scripts.
+- `SHA256SUMS.txt` — checksums for both ZIPs.
+
+Verify a downloaded ZIP from PowerShell:
+
+```powershell
+Get-FileHash .\ScreenAlignmentGrid-v30-Portable.zip -Algorithm SHA256
+```
+
+Build release ZIPs locally from a Linux/macOS shell:
+
+```bash
+./scripts/build-release.sh v30
+```
 
 ## How to run
 
 1. Extract the zip.
-2. Recommended: double-click `Install Screen Alignment Grid.cmd`.
+2. Recommended for cautious users: download the Portable ZIP and double-click `Run Portable.cmd`.
+3. Installer option: download the Installer ZIP and double-click `Install Screen Alignment Grid.cmd`.
    - Installs to `%LOCALAPPDATA%\Programs\Screen Alignment Grid`.
    - Creates Desktop and Start Menu launch shortcuts using the custom icon.
    - Removes any old Start Menu uninstall shortcut from previous versions; uninstall is available from the app's **General** tab.
-3. Portable mode: double-click `Run Screen Alignment Grid.cmd` directly from the extracted folder.
-4. Optional portable shortcut only: double-click `Create Desktop Shortcut.cmd` to add a **Screen Alignment Grid** shortcut to your Windows desktop.
-5. If Windows SmartScreen or PowerShell execution policy complains, right-click the `.ps1`, choose Properties, click Unblock if present, then run the `.cmd` again.
+4. Source-tree portable mode: double-click `Run Screen Alignment Grid.cmd` directly from the extracted repository/source folder.
+5. Optional portable shortcut only: double-click `Create Desktop Shortcut.cmd` to add a **Screen Alignment Grid** shortcut on your Windows desktop.
+6. If Windows SmartScreen or PowerShell execution policy complains, right-click the `.ps1`, choose Properties, click Unblock if present, then run the `.cmd` again.
 
 You can also run it manually from PowerShell:
 
@@ -94,6 +116,7 @@ MIT License. See [`LICENSE`](LICENSE).
 
 ### Version notes
 
+- `2026-07-27 v30`: Added a release packaging script that builds separate Portable and Installer ZIPs plus `SHA256SUMS.txt`, and documented the Portable ZIP as the recommended download for users who want fewer antivirus heuristic triggers.
 - `2026-07-27 v29`: Raised the grid-spacing maximum to `240 px` and added Grid-tab 16:9 helper marks for `60`, `120`, and `240 px` spacing.
 - `2026-07-27 v28`: Added Grid-tab guidance that the default grid interval is 50 px and that grid lines are center-anchored for measuring `/Viewport` pixel offsets from the red center lines.
 - `2026-07-08 v27`: Shortened the General tab uninstall description to `Remove installed app files` to avoid clipping on high-DPI displays.
