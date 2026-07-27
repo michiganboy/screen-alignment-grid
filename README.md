@@ -94,6 +94,7 @@ MIT License. See [`LICENSE`](LICENSE).
 
 ### Version notes
 
+- `2026-07-27 v28`: Added Grid-tab guidance that the default grid interval is 50 px and that grid lines are center-anchored for measuring `/Viewport` pixel offsets from the red center lines.
 - `2026-07-08 v27`: Shortened the General tab uninstall description to `Remove installed app files` to avoid clipping on high-DPI displays.
 - `2026-07-08 v26`: Fixed high-DPI clipping on the General tab uninstall description by shortening the text and increasing the label height.
 - `2026-07-08 v25`: Fixed settings UI not appearing after hidden launch on some Windows systems. The app now explicitly restores, shows, activates, and brings the settings window forward after creation, even when launched through the invisible VBS/wscript path.

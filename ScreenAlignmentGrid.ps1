@@ -385,16 +385,23 @@ namespace ScreenAlignmentGrid
             gridTrack.Width = 640;
             gridTab.Controls.Add(gridTrack);
 
+            Label gridHelp = new Label();
+            gridHelp.Text = "Default spacing is 50 px. Grid lines are center-anchored, so they measure pixel offsets outward from the red center lines for /Viewport positioning.";
+            gridHelp.AutoSize = false;
+            gridHelp.Location = new Point(24, 116);
+            gridHelp.Size = new Size(650, 50);
+            gridTab.Controls.Add(gridHelp);
+
             Label opacityLabel = new Label();
             opacityLabel.Text = "Grid intensity";
             opacityLabel.AutoSize = true;
-            opacityLabel.Location = new Point(24, 156);
+            opacityLabel.Location = new Point(24, 184);
             gridTab.Controls.Add(opacityLabel);
 
             Label opacityValue = new Label();
             opacityValue.Text = alpha.ToString();
             opacityValue.AutoSize = true;
-            opacityValue.Location = new Point(610, 156);
+            opacityValue.Location = new Point(610, 184);
             gridTab.Controls.Add(opacityValue);
 
             NoWheelTrackBar opacityTrack = new NoWheelTrackBar();
@@ -404,14 +411,14 @@ namespace ScreenAlignmentGrid
             opacityTrack.SmallChange = 15;
             opacityTrack.LargeChange = 30;
             opacityTrack.Value = Math.Max(opacityTrack.Minimum, Math.Min(opacityTrack.Maximum, alpha));
-            opacityTrack.Location = new Point(24, 188);
+            opacityTrack.Location = new Point(24, 216);
             opacityTrack.Width = 640;
             gridTab.Controls.Add(opacityTrack);
 
             Label opacityHelp = new Label();
             opacityHelp.Text = "Intensity dims line colors without alpha-blending them into the transparent background.";
             opacityHelp.AutoSize = false;
-            opacityHelp.Location = new Point(24, 286);
+            opacityHelp.Location = new Point(24, 318);
             opacityHelp.Size = new Size(650, 42);
             gridTab.Controls.Add(opacityHelp);
 
